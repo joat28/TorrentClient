@@ -25,17 +25,17 @@ public class TorrentController {
            return ResponseEntity.status(HttpStatus.OK).body(torrentFileService.parseTorrentFile(file));
        }
        catch(Exception e) {
-           log.error("message = Error while parsing torrent file, exception, cause = {}", e.getMessage());
+//           log.error("message = Error while parsing torrent file, exception, cause = {}", e.getMessage());
            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while parsing file");
        }
     }
     @PostMapping("/parse-with-package")
-    public ResponseEntity<?> parseTorrentUsingPackage(@RequestBody MultipartFile file) {
+    public ResponseEntity<String> parseTorrentUsingPackage(@RequestBody MultipartFile file) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(torrentFileService.parseTorrentFileWithPackage(file));
         }
         catch(Exception e) {
-            log.error("message = Error while parsing torrent file using package, exception, cause = {}", e.getMessage());
+//            log.error("message = Error while parsing torrent file using package, exception, cause = {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while parsing file");
         }
     }

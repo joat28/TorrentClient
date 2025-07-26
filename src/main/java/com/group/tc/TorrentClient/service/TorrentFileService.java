@@ -5,9 +5,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.turn.ttorrent.common.Torrent;
 
 
-
-
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Map;
 
@@ -25,12 +22,11 @@ public class TorrentFileService {
             }
         }
     }
-    public Map<String, Object> parseTorrentFileWithPackage(MultipartFile file) throws Exception {
+    public String parseTorrentFileWithPackage(MultipartFile file) throws Exception {
 
 
-        Torrent
-        System.out.println("Name: " + torrent.getName());
-        System.out.println("Piece length: " + torrent.getPieceLength());
+        Torrent torrent = Torrent.load(file.getResource().getFile());
+        return torrent.toString();
 
     }
 }

@@ -5,10 +5,9 @@ import org.springframework.stereotype.Service;
 import java.io.*;
 import java.util.*;
 
-
-@Service
 public class BencodeDecoder {
     private final InputStream in;
+
 
     public BencodeDecoder(InputStream in) {
         this.in = in;
