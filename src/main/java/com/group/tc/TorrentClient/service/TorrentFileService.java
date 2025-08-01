@@ -27,7 +27,8 @@ public class TorrentFileService {
             }
         }
         catch(Exception e) {
-//            log.error(e.getMessage());
+            log.error("Error parsing torrent file - {}", e.getMessage(), e);
+            log.error(e.getMessage());
             throw e;
         }
     }
@@ -42,7 +43,7 @@ public class TorrentFileService {
             return name + " " + size + " " + torrent.toString();
         }
         catch(Exception e) {
-            log.error(e.getMessage());
+            log.error("Error parsing torrent file with package - {}", e.getMessage(), e);
             throw e;
         }
         finally {

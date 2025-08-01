@@ -21,6 +21,7 @@ public class TorrentController {
     @PostMapping("/parse-torrent-file")
     public ResponseEntity<?> parseTorrent(@RequestBody MultipartFile file) {
        try {
+           log.info("Calling parseTorrent endpoint with file: {}", file.getOriginalFilename());
            return ResponseEntity.status(HttpStatus.OK).body(torrentFileService.parseTorrentFile(file));
        }
        catch(Exception e) {
@@ -31,6 +32,7 @@ public class TorrentController {
     @PostMapping("/parse-with-package")
     public ResponseEntity<?> parseTorrentUsingPackage(@RequestBody MultipartFile file) {
         try {
+            log.info("Calling parseTorrentUsingPackage endpoint with file: {}", file.getOriginalFilename());
             return ResponseEntity.status(HttpStatus.OK).body(torrentFileService.parseTorrentFileWithPackage(file));
         }
         catch(Exception e) {
