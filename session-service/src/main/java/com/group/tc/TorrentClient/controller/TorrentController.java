@@ -40,6 +40,14 @@ public class TorrentController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error while parsing file");
         }
     }
+
+//    @GetMapping("/get-peers")
+//    public ResponseEntity<?> getPeers(String result) {
+//
+//        return ResponseEntity.status(HttpStatus.OK).body(torrentFileService.decodePeerInformation(result));
+//
+//
+//    }
     @GetMapping("/health")
     public ResponseEntity<String> health() {
         return ResponseEntity.ok("OK");
