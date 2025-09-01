@@ -108,7 +108,7 @@ public class TorrentFileService {
 
 
     public static void main(String[] args) throws Exception {
-        byte[] response = Files.readAllBytes(Paths.get("/Users/prabhatrao/Downloads/something.bin"));
+        byte[] response = Files.readAllBytes(Paths.get("/Users/prabhatrao/Downloads/response.bin"));
         int index = 0;
 
         if (response[index++] != 'd') return; // Not a dictionary
